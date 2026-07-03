@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="th" data-modules-path="../data/modules.json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills เฉพาะฝ่ายงาน MRG — MRG AI Training</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo-godlike.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <script>
+    if (!sessionStorage.getItem("mrg_auth")) {
+      location.href = "../login.html?redirect=" + encodeURIComponent(location.href);
+    }
+  </script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/img/logo-godlike.png" height="32" alt="Godlike" onerror="this.style.display='none'">
+    MRG AI Training
+  </a>
+  <div id="nav-links" class="nav-links"></div>
+  <a href="../data/mrg-claude-cowork-training.md" class="btn-outline" style="font-size:12px;padding:6px 14px;" download>📥 .md</a>
+</nav>
+
+<div id="progress-bar" class="progress-bar"></div>
+
+<div class="page-wrapper">
+  <div class="content-layout">
+    <main id="main-content">
+      <div style="margin-bottom: 32px;">
+        <span class="level-badge medium">Medium</span>
+        <p style="font-size:12px; color:var(--gi-muted); margin:8px 0 4px;">Module 11</p>
+        <h1>Skills เฉพาะฝ่ายงาน MRG</h1>
+        <p style="color:var(--gi-muted); font-size:16px; margin-top:8px;">สร้าง workflow เฉพาะทีมให้ใช้งานซ้ำได้</p>
+      </div>
+
+      <h2 id="what-is-skill">11.1 Skills คืออะไร</h2>
+      <p><strong>Skills</strong> = ชุดคำสั่งที่สอน AI ทำงานเฉพาะทาง ครั้งเดียว ใช้ได้ตลอด</p>
+      <table class="gi-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Prompt ธรรมดา</th>
+            <th>Skill</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>การใช้งาน</td>
+            <td>อธิบายใหม่ทุกครั้ง</td>
+            <td>เรียกชื่อ Skill → ทำงานทันที</td>
+          </tr>
+          <tr>
+            <td>เปรียบเหมือน</td>
+            <td>สอนพนักงานใหม่ทุกวัน</td>
+            <td>พนักงาน MRG ที่ฝึกแล้ว รู้งานดี</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="built-in-skills">11.2 Skills สำเร็จรูป (ทำงานอัตโนมัติ)</h2>
+      <p>PDF Skill, Word Skill, Excel Skill, PowerPoint Skill, Schedule Skill — ไม่ต้องสั่งเพิ่มเติม</p>
+
+      <h2 id="mrg-custom-skills">11.3 Skills เฉพาะสำหรับ MRG — แนะนำสร้าง</h2>
+      <h3 id="export-sales-skill">ฝ่าย Export &amp; Sales</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง Skill ชื่อ "export-toolkit"
+สำหรับทีม Export ของ Marine Gold Products
+
+เมื่อเรียกใช้ Skill นี้ ให้สามารถทำได้ 3 อย่าง:
+
+1. "invoice" — สร้าง Commercial Invoice
+   ถามข้อมูล: ชื่อลูกค้า, สินค้า/Spec, ปริมาณ, ราคา, Incoterms, Port
+   สร้าง: ไฟล์ Word ภาษาอังกฤษ มาตรฐาน Export
+
+2. "email-en" — ร่างอีเมลภาษาอังกฤษ
+   ถามข้อมูล: ชื่อลูกค้า, ประเทศ, หัวข้ออีเมล, ประเด็นหลัก
+   สร้าง: Email ภาษาอังกฤษ Professional B2B Seafood
+
+3. "market-report" — สรุปรายงานตลาด
+   ค้นหาข้อมูล: ราคากุ้ง ข่าว Seafood สถานการณ์คู่แข่ง
+   สร้าง: Word Report สรุป 1-2 หน้า</div>
+      </div>
+
+      <h3 id="qa-production-skill">ฝ่าย QA / Production</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง Skill ชื่อ "qa-toolkit"
+สำหรับทีม QA ของ Marine Gold Products
+
+เมื่อเรียกใช้ Skill นี้ ให้สามารถทำได้ 3 อย่าง:
+
+1. "sop" — สร้าง SOP ฉบับใหม่
+   ถามข้อมูล: หัวข้อ SOP, ขั้นตอนหลัก, ผู้รับผิดชอบ, เกณฑ์ตัดสิน
+   สร้าง: ไฟล์ Word SOP มาตรฐาน มีเลขที่เอกสาร
+
+2. "qc-summary" — สรุปผล QC จากไฟล์ Excel
+   รับ: ไฟล์ Excel ข้อมูล QC
+   สร้าง: รายงาน PDF สรุป Pass Rate, Trend, จุดที่ต้องแก้ไข
+
+3. "nc-report" — สร้างรายงาน Non-Conformance
+   ถามข้อมูล: Lot No., ปัญหาที่พบ, ผลกระทบ, มาตรการแก้ไข
+   สร้าง: NC Report เป็น PDF พร้อมช่องลงนาม</div>
+      </div>
+
+      <h3 id="hr-training-skill">ฝ่าย HR / Training</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง Skill ชื่อ "hr-toolkit"
+สำหรับทีม HR ของ Marine Gold Products
+
+รวม 3 ความสามารถ:
+1. "job-post" — สร้างประกาศรับสมัครงาน (ไทย/อังกฤษ) สำหรับตำแหน่งต่างๆ
+2. "training-report" — สรุปรายงาน Training Attendance และผลการประเมิน
+3. "be-better-award" — ร่างคำประกาศ "Be Better Award" ประจำเดือน</div>
+      </div>
+
+      <h3 id="marketing-skill">ฝ่าย Marketing / Business Dev</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง Skill ชื่อ "marketing-toolkit"
+สำหรับทีม Marketing ของ Marine Gold Products
+
+รวม 3 ความสามารถ:
+1. "product-brief" — เขียน Product Description (ไทย+อังกฤษ) สำหรับสินค้าใหม่
+2. "competitor-scan" — Research คู่แข่งในตลาดที่ระบุ สรุปเป็นตาราง
+3. "exhibition-content" — สร้าง Content ชุดสำหรับงาน Trade Show</div>
+      </div>
+
+      <div class="module-nav" id="module-nav"></div>
+    </main>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">สารบัญ</div>
+      <nav id="sidebar-links"></nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  จัดทำโดย <strong>Godlike Innovation</strong> | สงวนลิขสิทธิ์ 2026
+</footer>
+
+<div class="toast" id="toast">คัดลอก Prompt แล้ว!</div>
+
+<script type="module">
+  import { initNav, initSidebarSpy } from "../assets/js/nav.js";
+  import { initProgress } from "../assets/js/progress.js";
+  import { initCopy } from "../assets/js/copy.js";
+
+  function buildSidebarLinks() {
+    const sidebar = document.querySelector("#sidebar-links");
+    const headings = document.querySelectorAll("#main-content h2[id], #main-content h3[id]");
+    if (!sidebar || !headings.length) return;
+    sidebar.innerHTML = "";
+    headings.forEach((heading) => {
+      const link = document.createElement("a");
+      link.className = "sidebar-link";
+      if (heading.tagName === "H3") link.style.paddingLeft = "22px";
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      sidebar.appendChild(link);
+    });
+  }
+
+  buildSidebarLinks();
+  initNav("m11");
+  initSidebarSpy();
+  initProgress();
+  initCopy();
+</script>
+</body>
+</html>

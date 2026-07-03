@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login | Claude Cowork Training</title>
+    <link rel="icon" type="image/png" href="assets/img/logo-godlike.png" />
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top left, rgba(255, 255, 255, 0.85), transparent 24%),
+          var(--gi-gradient);
+      }
+
+      .login-shell {
+        width: min(380px, calc(100vw - 32px));
+        padding: 40px;
+        border: 1px solid rgba(0, 174, 239, 0.26);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 24px 60px rgba(21, 101, 192, 0.16);
+        text-align: center;
+      }
+
+      .login-logo {
+        width: 180px;
+        height: auto;
+        margin: 0 auto 22px;
+        object-fit: contain;
+      }
+
+      .login-title {
+        margin-bottom: 6px;
+        color: var(--gi-text);
+        font-size: 30px;
+      }
+
+      .login-subtitle {
+        margin-bottom: 24px;
+        color: var(--gi-cyan);
+        font-size: 15px;
+      }
+
+      .login-form {
+        display: grid;
+        gap: 14px;
+      }
+
+      .login-input {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid var(--gi-border);
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.94);
+        color: var(--gi-text);
+      }
+
+      .login-input:focus {
+        border-color: var(--gi-cyan);
+        outline: none;
+      }
+
+      .login-submit {
+        width: 100%;
+      }
+
+      .btn-primary {
+        width: 100%;
+        padding: 12px 20px;
+        border: 0;
+        border-radius: var(--radius-sm);
+        background: var(--gi-brand-gradient);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        opacity: 0.94;
+      }
+
+      .login-error {
+        min-height: 20px;
+        color: #ef4444;
+        font-size: 13px;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+
+      .login-error.show {
+        opacity: 1;
+        animation: shake 0.35s ease;
+      }
+
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+
+        25% {
+          transform: translateX(-6px);
+        }
+
+        50% {
+          transform: translateX(6px);
+        }
+
+        75% {
+          transform: translateX(-4px);
+        }
+      }
+    </style>
+    <script type="module" src="assets/js/auth.js"></script>
+  </head>
+  <body>
+    <main class="login-shell">
+      <img
+        class="login-logo"
+        src="assets/img/logo-godlike.png"
+        alt="Godlike Innovation"
+        onerror="this.style.display='none'"
+      />
+      <h1 class="login-title">Claude Cowork Training</h1>
+      <p class="login-subtitle">Marine Gold Products</p>
+
+      <form class="login-form" id="login-form">
+        <input
+          id="password"
+          class="login-input"
+          type="password"
+          placeholder="กรอกรหัสผ่าน"
+          autocomplete="current-password"
+          required
+        />
+        <button class="btn-primary login-submit" type="submit">Login</button>
+        <p id="login-error" class="login-error">รหัสผ่านไม่ถูกต้อง</p>
+      </form>
+    </main>
+
+    <script type="module">
+      import { login } from "./assets/js/auth.js";
+
+      const form = document.querySelector("#login-form");
+      const passwordInput = document.querySelector("#password");
+      const errorEl = document.querySelector("#login-error");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const success = login(passwordInput.value);
+
+        if (success) {
+          return;
+        }
+
+        errorEl.classList.remove("show");
+        void errorEl.offsetWidth;
+        errorEl.classList.add("show");
+        passwordInput.select();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="th" data-modules-path="../data/modules.json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>รู้จัก AI Agent — MRG AI Training</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo-godlike.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <script>
+    if (!sessionStorage.getItem("mrg_auth")) {
+      location.href = "../login.html?redirect=" + encodeURIComponent(location.href);
+    }
+  </script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/img/logo-godlike.png" height="32" alt="Godlike" onerror="this.style.display='none'">
+    MRG AI Training
+  </a>
+  <div id="nav-links" class="nav-links"></div>
+  <a href="../data/mrg-claude-cowork-training.md" class="btn-outline" style="font-size:12px;padding:6px 14px;" download>📥 .md</a>
+</nav>
+
+<div id="progress-bar" class="progress-bar"></div>
+
+<div class="page-wrapper">
+  <div class="content-layout">
+
+    <main id="main-content">
+      <div style="margin-bottom: 32px;">
+        <span class="level-badge easy">Easy</span>
+        <p style="font-size:12px; color:var(--gi-muted); margin:8px 0 4px;">Module 01</p>
+        <h1>รู้จัก AI Agent</h1>
+        <p style="color:var(--gi-muted); font-size:16px; margin-top:8px;">DELEGATE Framework + บริบท MRG</p>
+      </div>
+
+      <h2 id="ai-agent-mrg">1.1 AI Agent คืออะไร — ในบริบทของ MRG</h2>
+      <p>AI Agent คือ <strong>"พนักงานดิจิทัลที่ไม่เคยลา"</strong> ที่สามารถช่วยงาน MRG ได้จริง:</p>
+      <ul>
+        <li><strong>เข้าใจสิ่งที่เราพิมพ์</strong> — ทั้งภาษาไทยและอังกฤษ เหมาะกับงาน Export ที่ต้องใช้ทั้งสองภาษา</li>
+        <li><strong>คิดวิเคราะห์เอง</strong> — วางแผนขั้นตอนการทำงานให้</li>
+        <li><strong>ลงมือทำจริง</strong> — สร้าง Invoice, รายงาน QC, สรุปยอดส่งออก ได้หมด</li>
+        <li><strong>ทำจนเสร็จ</strong> — สั่งครั้งเดียว ทำต่อจนเสร็จ ไม่ต้องคอยกดทีละขั้น</li>
+      </ul>
+
+      <h2 id="ai-agent-vs-chatbot">1.2 AI Agent vs Chatbot — ต่างกันอย่างไร</h2>
+      <table class="gi-table">
+        <thead>
+          <tr>
+            <th>เรื่อง</th>
+            <th>Chatbot ทั่วไป</th>
+            <th>Claude Cowork (AI Agent)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ทำอะไรได้</td>
+            <td>ตอบคำถามในกรอบแชท</td>
+            <td>ทำงานจริง สร้างไฟล์ส่งออก วิเคราะห์ข้อมูล</td>
+          </tr>
+          <tr>
+            <td>ทำงานกี่ขั้น</td>
+            <td>ทีละคำถาม</td>
+            <td>หลายขั้นตอนต่อเนื่องจนเสร็จ</td>
+          </tr>
+          <tr>
+            <td>เข้าถึงไฟล์</td>
+            <td>❌ ไม่ได้</td>
+            <td>✅ เห็นไฟล์ในเครื่อง สร้าง แก้ไขได้</td>
+          </tr>
+          <tr>
+            <td>เชื่อมต่อแอปอื่น</td>
+            <td>❌ ไม่ได้</td>
+            <td>✅ Google Drive, Canva, Calendar</td>
+          </tr>
+          <tr>
+            <td>ทำงานอัตโนมัติ</td>
+            <td>❌ ต้องสั่งทุกครั้ง</td>
+            <td>✅ ตั้งเวลาให้ทำเองได้</td>
+          </tr>
+          <tr>
+            <td>ภาษาอังกฤษ/ไทย</td>
+            <td>⚠️ ขึ้นอยู่กับเครื่องมือ</td>
+            <td>✅ ทั้งสองภาษา แปลได้ทันที</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="mrg-use-cases">1.3 ตัวอย่างงานที่ AI ช่วย MRG ได้จริง</h2>
+      <h3 id="easy-level">ระดับง่าย — ทำได้ทันที ไม่ต้องตั้งค่า</h3>
+      <ul>
+        <li><strong>สรุปและวิจัย</strong> — ค้นหาราคากุ้งในตลาดโลก ข่าวอุตสาหกรรม Seafood สรุปเป็นรายงาน</li>
+        <li><strong>ร่างการสื่อสาร</strong> — เขียนอีเมลภาษาอังกฤษถึงลูกค้าต่างประเทศ ประกาศภายใน แปลเอกสาร</li>
+        <li><strong>สร้างและแก้ไขเอกสาร</strong> — ร่างรายงาน QC, SOP, บันทึก Training เป็นไฟล์ Word/PDF</li>
+        <li><strong>สรุปไฟล์</strong> — อ่านและสรุปสัญญา, ใบแจ้งหนี้, รายงานผลตรวจ</li>
+      </ul>
+
+      <h3 id="medium-level">ระดับกลาง — ต้องใช้ไฟล์ประกอบ</h3>
+      <ul>
+        <li><strong>งานนำเสนอ</strong> — สร้าง Pitch Deck ยอดขายรายไตรมาส สรุปผลงานบอร์ดบริหาร</li>
+        <li><strong>งาน Spreadsheet</strong> — สร้างโมเดล Excel ติดตามยอดส่งออก งบประมาณ Dashboard</li>
+        <li><strong>เปรียบเทียบเอกสาร</strong> — เปรียบเทียบ Spec สินค้า ตรวจจับความแตกต่างในสัญญา</li>
+        <li><strong>จัดระเบียบไฟล์</strong> — เปลี่ยนชื่อ จัดเรียง แปลงไฟล์เป็นชุด</li>
+      </ul>
+
+      <h3 id="advanced-level">ระดับสูง — ต้องตั้งค่าหรือเชื่อมต่อ</h3>
+      <ul>
+        <li><strong>กำหนดตารางอัตโนมัติ</strong> — รายงานราคากุ้งทุกเช้า แจ้งเตือน Deadline ส่งออก</li>
+        <li><strong>Dashboard แบบ Live</strong> — ดึงข้อมูลจาก Google Sheets มาแสดงผลแบบ Real-time</li>
+        <li><strong>Workflow ข้ามแอป</strong> — ดึงข้อมูล Drive → วิเคราะห์ → สร้าง Report → ส่ง Telegram</li>
+        <li><strong>รัน Script อัตโนมัติ</strong> — ประมวลผลข้อมูลการผลิตตามกำหนดเวลา</li>
+      </ul>
+
+      <h2 id="delegate-framework">1.4 DELEGATE Framework — หลักการมอบหมายงานให้ AI</h2>
+      <p>กรอบการสั่งงาน AI ให้ได้ผลดีที่สุด:</p>
+      <table class="gi-table">
+        <thead>
+          <tr>
+            <th>ตัวอักษร</th>
+            <th>ความหมาย</th>
+            <th>ตัวอย่างของ MRG</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>D</strong>efine</td>
+            <td>กำหนดเป้าหมายให้ชัด</td>
+            <td>"ต้องการรายงานยอดส่งออกกุ้งขาว"</td>
+          </tr>
+          <tr>
+            <td><strong>E</strong>xplain</td>
+            <td>อธิบายบริบท</td>
+            <td>"ส่งให้ผู้บริหาร เพื่อประชุม BOD"</td>
+          </tr>
+          <tr>
+            <td><strong>L</strong>anguage</td>
+            <td>กำหนดภาษาและโทน</td>
+            <td>"ภาษาอังกฤษ ทางการ"</td>
+          </tr>
+          <tr>
+            <td><strong>E</strong>xample</td>
+            <td>ให้ตัวอย่าง</td>
+            <td>"แบบรายงานที่เคยทำ"</td>
+          </tr>
+          <tr>
+            <td><strong>G</strong>uideline</td>
+            <td>กำหนดกฎ/ข้อจำกัด</td>
+            <td>"ห้ามใส่ข้อมูลลูกค้าจริง"</td>
+          </tr>
+          <tr>
+            <td><strong>A</strong>ction</td>
+            <td>ระบุ action</td>
+            <td>"สร้างเป็นไฟล์ PDF"</td>
+          </tr>
+          <tr>
+            <td><strong>T</strong>est</td>
+            <td>ตรวจสอบ</td>
+            <td>"ตรวจตัวเลขก่อนส่ง"</td>
+          </tr>
+          <tr>
+            <td><strong>E</strong>volve</td>
+            <td>ปรับปรุง</td>
+            <td>"บันทึกเป็น Skill ไว้ใช้ซ้ำ"</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tip-box">
+        <span class="tip-icon">💡</span><strong>Tip สำหรับ MRG:</strong> ยิ่งบอก AI ว่างานนี้ส่งใคร ส่งตลาดไหน ใช้ภาษาอะไร ผลลัพธ์จะยิ่งตรงใจมากขึ้น
+      </div>
+
+      <div class="module-nav" id="module-nav"></div>
+    </main>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">สารบัญ</div>
+      <nav id="sidebar-links"></nav>
+    </aside>
+
+  </div>
+</div>
+
+<footer class="footer">
+  จัดทำโดย <strong>Godlike Innovation</strong> | สงวนลิขสิทธิ์ 2026
+</footer>
+
+<div class="toast" id="toast">คัดลอก Prompt แล้ว!</div>
+
+<script type="module">
+  import { initNav, initSidebarSpy } from "../assets/js/nav.js";
+  import { initProgress } from "../assets/js/progress.js";
+  import { initCopy } from "../assets/js/copy.js";
+
+  function buildSidebarLinks() {
+    const sidebar = document.querySelector("#sidebar-links");
+    const headings = document.querySelectorAll("#main-content h2[id], #main-content h3[id]");
+
+    if (!sidebar || !headings.length) {
+      return;
+    }
+
+    sidebar.innerHTML = "";
+
+    headings.forEach((heading) => {
+      const link = document.createElement("a");
+      link.className = "sidebar-link";
+      if (heading.tagName === "H3") {
+        link.style.paddingLeft = "22px";
+      }
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      sidebar.appendChild(link);
+    });
+  }
+
+  buildSidebarLinks();
+  initNav("m01");
+  initSidebarSpy();
+  initProgress();
+  initCopy();
+</script>
+</body>
+</html>

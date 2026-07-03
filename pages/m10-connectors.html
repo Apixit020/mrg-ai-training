@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="th" data-modules-path="../data/modules.json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connectors — MRG AI Training</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo-godlike.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <script>
+    if (!sessionStorage.getItem("mrg_auth")) {
+      location.href = "../login.html?redirect=" + encodeURIComponent(location.href);
+    }
+  </script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/img/logo-godlike.png" height="32" alt="Godlike" onerror="this.style.display='none'">
+    MRG AI Training
+  </a>
+  <div id="nav-links" class="nav-links"></div>
+  <a href="../data/mrg-claude-cowork-training.md" class="btn-outline" style="font-size:12px;padding:6px 14px;" download>📥 .md</a>
+</nav>
+
+<div id="progress-bar" class="progress-bar"></div>
+
+<div class="page-wrapper">
+  <div class="content-layout">
+    <main id="main-content">
+      <div style="margin-bottom: 32px;">
+        <span class="level-badge hard">Hard</span>
+        <p style="font-size:12px; color:var(--gi-muted); margin:8px 0 4px;">Module 10</p>
+        <h1>Connectors</h1>
+        <p style="color:var(--gi-muted); font-size:16px; margin-top:8px;">Google Calendar, Plugins และ Telegram</p>
+      </div>
+
+      <h2 id="what-are-connectors">10.1 Connectors คืออะไร</h2>
+      <p>ตัวเชื่อมที่ทำให้ AI เข้าถึงแอปและบริการภายนอกได้ เหมือนให้ AI มี "กุญแจ" เข้าไปทำงานในแอปต่างๆ</p>
+      <p><strong>Connectors ที่แนะนำให้ MRG เชื่อมต่อก่อน:</strong></p>
+      <ol>
+        <li>Google Drive (ไฟล์รายงาน)</li>
+        <li>Gmail (อีเมลลูกค้า)</li>
+        <li>Google Calendar (ตารางงาน)</li>
+        <li>PDF + Word Plugin (เอกสาร)</li>
+      </ol>
+
+      <h2 id="google-calendar">10.2 Google Calendar</h2>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">ช่วยดูตารางงานใน Google Calendar สัปดาห์นี้
+สรุปเป็นตาราง: วัน เวลา หัวข้อ สถานที่
+แล้วบอกด้วยว่าวันไหนว่าง เหมาะกับการนัด Video Call ลูกค้าต่างประเทศ</div>
+      </div>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้างนัดหมายใน Google Calendar
+หัวข้อ: MRG Customer Meeting — [ชื่อลูกค้า]
+วันพุธนี้ เวลา 14.00-15.00 น. (ตาม Time Zone ลูกค้าด้วย)
+รายละเอียด: หารือ Q3 Order Volume และ New Product Line
+เพิ่มผู้เข้าร่วม: [อีเมลทีม Export]</div>
+      </div>
+
+      <h2 id="document-plugins">10.3 PDF / Word / PowerPoint Plugin</h2>
+      <p><strong>วิธีเชื่อมต่อ:</strong> Connectors → เลือก Plugin → Connect → ใช้ได้เลย</p>
+      <h3 id="read-summarize-docs">อ่านและสรุปสัญญา/เอกสาร</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">อ่านไฟล์ PDF ที่แนบมานี้ (Contract / COA / Lab Report)
+สรุปประเด็นสำคัญ:
+1. คู่สัญญา / ผู้ออกเอกสาร
+2. ช่วงเวลา / วันที่มีผล
+3. ข้อกำหนดหลักที่ต้องปฏิบัติตาม
+4. ค่าปรับ / ข้อยกเว้น (ถ้ามี)
+5. ข้อที่ควรให้ฝ่ายกฎหมายตรวจสอบ
+
+สรุปเป็นภาษาไทย เข้าใจง่าย</div>
+      </div>
+
+      <h2 id="control-mac-windows">10.4 Control Mac / Windows</h2>
+      <p><strong>สิ่งที่ AI ทำได้:</strong></p>
+      <ul>
+        <li>เปิด/ปิดแอปพลิเคชัน</li>
+        <li>จัดการไฟล์และโฟลเดอร์</li>
+        <li>ค้นหาและเปิดเอกสาร</li>
+        <li>รัน Script หรือ Batch Process</li>
+      </ul>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">ช่วยจัดระเบียบโฟลเดอร์ Export Documents ให้หน่อย
+1. ดูไฟล์ทั้งหมดในโฟลเดอร์นี้
+2. สร้างโฟลเดอร์แยกตามปีและเดือน: 2026/01, 2026/02, ...
+3. ย้ายไฟล์ตามวันที่ที่อยู่ในชื่อไฟล์
+4. สรุปให้ว่าย้ายอะไรไปไหนบ้าง</div>
+      </div>
+      <div class="warning-box">
+        <span class="tip-icon">⚠️</span><strong>ข้อควรระวัง:</strong> ต้องนั่งดูจอตอน AI ทำงาน / เริ่มจากงานง่ายๆ ก่อน / ไม่ควรสั่งลบไฟล์โดยตรง
+      </div>
+
+      <h2 id="telegram-bot">10.5 🆕 เชื่อมต่อ Telegram Bot — สำหรับ MRG</h2>
+      <div class="tip-box">
+        <span class="tip-icon">💡</span>แทนที่ LINE MCP เดิม → ใช้ <strong>Telegram Bot</strong> ซึ่งเหมาะกับทีมที่ใช้ Telegram สื่อสารกับลูกค้าต่างประเทศอยู่แล้ว
+      </div>
+      <p><strong>สิ่งที่ AI ทำได้ผ่าน Telegram:</strong></p>
+      <ul>
+        <li>ส่งรายงานราคากุ้งประจำวันเข้า Group</li>
+        <li>แจ้งเตือน Shipment Schedule</li>
+        <li>ส่งสรุป QC Report</li>
+        <li>Broadcast ข่าวสำคัญถึงทีม Export</li>
+      </ul>
+
+      <h3 id="telegram-steps">ขั้นตอนติดตั้ง Telegram Bot (8 ขั้น)</h3>
+      <h3 id="telegram-step-1">ขั้น 1: ติดตั้ง Node.js (เวอร์ชัน 20 ขึ้นไป)</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">⌘</span>
+          <span class="prompt-label">Command</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">node --version   # ตรวจสอบ → ถ้าขึ้น v20.x.x ขึ้นไป = พร้อมใช้</div>
+      </div>
+
+      <h3 id="telegram-step-2">ขั้น 2: สร้าง Telegram Bot ผ่าน BotFather</h3>
+      <ul>
+        <li>เปิด Telegram → ค้นหา <strong>@BotFather</strong> → กด Start</li>
+        <li>พิมพ์ <code>/newbot</code></li>
+        <li>ตั้งชื่อ Bot เช่น <code>MRG Export Assistant</code></li>
+        <li>ตั้ง Username เช่น <code>mrg_export_bot</code></li>
+        <li>Copy <strong>Bot Token</strong> ที่ได้ (รูปแบบ: <code>123456789:AAF...</code>)</li>
+      </ul>
+
+      <h3 id="telegram-step-3">ขั้น 3: ดึง Chat ID ของตัวเอง (หรือ Group)</h3>
+      <p><strong>วิธีที่ 1 — Chat ID ส่วนตัว:</strong></p>
+      <ul>
+        <li>เปิด Telegram → ค้นหา <strong>@userinfobot</strong> → กด Start → จะเห็น <code>Id: 1234567890</code></li>
+      </ul>
+      <p><strong>วิธีที่ 2 — Group Chat ID:</strong></p>
+      <ul>
+        <li>เพิ่ม Bot เข้า Group ก่อน</li>
+        <li>เปิดเบราว์เซอร์ → เข้า URL นี้ (แทน TOKEN ด้วย Bot Token):</li>
+      </ul>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">🔗</span>
+          <span class="prompt-label">URL</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">https://api.telegram.org/bot{TOKEN}/getUpdates</div>
+      </div>
+      <ul>
+        <li>ดูค่า <code>"id"</code> ในส่วน <code>"chat"</code> → นำมาใช้เป็น Group Chat ID (มักขึ้นต้นด้วย <code>-</code>)</li>
+      </ul>
+
+      <h3 id="telegram-step-4">ขั้น 4: ติดตั้ง Telegram MCP Server</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">⌘</span>
+          <span class="prompt-label">Command</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">npm install -g @modelcontextprotocol/server-telegram</div>
+      </div>
+      <p>หรือใช้ npx โดยไม่ต้องติดตั้ง (แนะนำ):</p>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">⌘</span>
+          <span class="prompt-label">Command</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">npx @modelcontextprotocol/server-telegram --help</div>
+      </div>
+
+      <h3 id="telegram-step-5">ขั้น 5: แก้ไข Config ใน Claude Desktop</h3>
+      <ul>
+        <li>Claude Desktop → <strong>Settings</strong> → <strong>Developer</strong> → <strong>Edit Config</strong></li>
+        <li>เปิดไฟล์ <code>claude_desktop_config.json</code> → วาง config:</li>
+      </ul>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Config</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">{
+  "mcpServers": {
+    "telegram-bot": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-telegram"
+      ],
+      "env": {
+        "TELEGRAM_BOT_TOKEN": "ใส่_Bot_Token_ที่ได้จาก_BotFather",
+        "TELEGRAM_CHAT_ID": "ใส่_Chat_ID_ของคุณหรือ_Group"
+      }
+    }
+  }
+}</div>
+      </div>
+      <div class="warning-box">
+        <span class="tip-icon">⚠️</span><strong>ถ้ามี MCP server อื่นอยู่แล้ว:</strong> ให้เพิ่ม <code>"telegram-bot": {...}</code> เข้าไปข้างใน <code>mcpServers</code> อย่าทับ config เดิม
+      </div>
+
+      <h3 id="telegram-step-6">ขั้น 6: Restart Claude Desktop</h3>
+      <ul>
+        <li>ปิดแอป → เปิดใหม่</li>
+        <li>จะเห็นไอคอน 🔨 → กดดู → ควรเห็น Telegram tools</li>
+      </ul>
+
+      <h3 id="telegram-step-7">ขั้น 7: ทดสอบส่งข้อความ Telegram</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">ส่งข้อความ Telegram หาฉันว่า "สวัสดี MRG! Claude Cowork พร้อมทำงานแล้ว 🦐"</div>
+      </div>
+
+      <h3 id="telegram-step-8">ขั้น 8: ตั้ง Telegram Group สำหรับทีม (แนะนำ)</h3>
+      <ul>
+        <li>สร้าง Telegram Group ชื่อ <code>MRG AI Reports</code></li>
+        <li>เพิ่ม Bot เข้า Group</li>
+        <li>เพิ่ม Chat ID ของ Group ใน config (แทน Chat ID ส่วนตัว)</li>
+        <li>ทดสอบ Broadcast</li>
+      </ul>
+
+      <h3 id="telegram-tools">Tools ที่ได้</h3>
+      <table class="gi-table">
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>ทำอะไร</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>send_message</td>
+            <td>ส่งข้อความธรรมดาถึงคนหรือ Group</td>
+          </tr>
+          <tr>
+            <td>send_photo</td>
+            <td>ส่งรูปภาพ/กราฟ</td>
+          </tr>
+          <tr>
+            <td>send_document</td>
+            <td>ส่งไฟล์ PDF, Excel</td>
+          </tr>
+          <tr>
+            <td>get_updates</td>
+            <td>ดูข้อความที่รับมาใหม่</td>
+          </tr>
+          <tr>
+            <td>get_chat</td>
+            <td>ดูข้อมูล Chat/Group</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tip-box">
+        <span class="tip-icon">💡</span><strong>Tip เด็ดสำหรับ MRG:</strong> ใช้ Telegram Bot ร่วมกับ Scheduled Tasks — ตั้งเวลาสรุปราคากุ้งโลกทุกเช้า แล้วส่งเข้า Group ทีม Export อัตโนมัติ!
+      </div>
+
+      <div class="module-nav" id="module-nav"></div>
+    </main>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">สารบัญ</div>
+      <nav id="sidebar-links"></nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  จัดทำโดย <strong>Godlike Innovation</strong> | สงวนลิขสิทธิ์ 2026
+</footer>
+
+<div class="toast" id="toast">คัดลอก Prompt แล้ว!</div>
+
+<script type="module">
+  import { initNav, initSidebarSpy } from "../assets/js/nav.js";
+  import { initProgress } from "../assets/js/progress.js";
+  import { initCopy } from "../assets/js/copy.js";
+
+  function buildSidebarLinks() {
+    const sidebar = document.querySelector("#sidebar-links");
+    const headings = document.querySelectorAll("#main-content h2[id], #main-content h3[id]");
+    if (!sidebar || !headings.length) return;
+    sidebar.innerHTML = "";
+    headings.forEach((heading) => {
+      const link = document.createElement("a");
+      link.className = "sidebar-link";
+      if (heading.tagName === "H3") link.style.paddingLeft = "22px";
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      sidebar.appendChild(link);
+    });
+  }
+
+  buildSidebarLinks();
+  initNav("m10");
+  initSidebarSpy();
+  initProgress();
+  initCopy();
+</script>
+</body>
+</html>

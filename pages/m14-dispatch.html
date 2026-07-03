@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="th" data-modules-path="../data/modules.json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Dispatch — MRG AI Training</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo-godlike.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <script>
+    if (!sessionStorage.getItem("mrg_auth")) {
+      location.href = "../login.html?redirect=" + encodeURIComponent(location.href);
+    }
+  </script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/img/logo-godlike.png" height="32" alt="Godlike" onerror="this.style.display='none'">
+    MRG AI Training
+  </a>
+  <div id="nav-links" class="nav-links"></div>
+  <a href="../data/mrg-claude-cowork-training.md" class="btn-outline" style="font-size:12px;padding:6px 14px;" download>📥 .md</a>
+</nav>
+
+<div id="progress-bar" class="progress-bar"></div>
+
+<div class="page-wrapper">
+  <div class="content-layout">
+    <main id="main-content">
+      <div style="margin-bottom: 32px;">
+        <span class="level-badge new">New</span>
+        <p style="font-size:12px; color:var(--gi-muted); margin:8px 0 4px;">Module 14</p>
+        <h1>Claude Dispatch</h1>
+        <p style="color:var(--gi-muted); font-size:16px; margin-top:8px;">ความสามารถใหม่สำหรับการสั่งงานและติดตามผล</p>
+      </div>
+
+      <p><strong>เปิดตัว:</strong> กุมภาพันธ์ 2026 (Claude Labs)</p>
+
+      <h2 id="what-is-dispatch">14.1 Claude Dispatch คืออะไร</h2>
+      <p>มือถือกลายเป็น <strong>"รีโมทคอนโทรล"</strong> สั่งงาน Claude Cowork จากที่ไหนก็ได้</p>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Flow</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">📱 มือถือ (สั่งงาน) → QR Pair → 🖥️ Desktop (ทำงานจริง) → ✅ ส่งผลกลับมือถือ</div>
+      </div>
+      <p><strong>เหมาะมากสำหรับ MRG เพราะ:</strong></p>
+      <ul>
+        <li>ผู้จัดการ Export สั่งดึงข้อมูลราคากุ้งขณะอยู่ในที่ประชุม</li>
+        <li>ทีม QA เช็คผล Lab Report จากโรงงาน</li>
+        <li>ผู้บริหารดูรายงานยอดส่งออกขณะเดินทาง</li>
+      </ul>
+
+      <h2 id="dispatch-how-to">14.2 วิธีใช้งาน</h2>
+      <ol>
+        <li>เปิด Claude Desktop บนเครื่อง (ต้องเปิดค้างไว้)</li>
+        <li>เปิด Claude App บนมือถือ → เมนู <strong>Dispatch</strong> (ใน Claude Labs)</li>
+        <li>Scan QR Code จาก Claude Desktop</li>
+        <li>พิมพ์สั่งงานจากมือถือ</li>
+      </ol>
+
+      <h3 id="mobile-prompt-1">Prompt ที่ใช้ได้ดีจากมือถือ</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">ค้นหาราคากุ้งขาวในตลาด USA และ EU วันนี้
+สรุปสั้นๆ เปรียบเทียบกับสัปดาห์ที่แล้ว</div>
+      </div>
+
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">เปิดไฟล์ Export_Q2_2026.xlsx จากโฟลเดอร์ Reports
+สรุปยอดส่งออกรวม Top 3 ตลาด</div>
+      </div>
+
+      <h2 id="dispatch-stability">14.3 เทคนิคสั่งงานให้เสถียร</h2>
+      <p>✅ เสถียร — สั่งแบบนี้:</p>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">ค้นหาราคากุ้งขาว Size 26/30 ในตลาด USA วันนี้ สรุปเป็นตาราง</div>
+      </div>
+
+      <div class="warning-box">
+        <span class="tip-icon">⚠️</span><strong>อาจไม่เสถียร — หลีกเลี่ยง:</strong>
+      </div>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">เปิด Chrome ไปเว็บ X → ดึงราคา → เปิด Excel → บันทึก → ส่งอีเมล → แจ้ง Telegram</div>
+      </div>
+
+      <div class="module-nav" id="module-nav"></div>
+    </main>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">สารบัญ</div>
+      <nav id="sidebar-links"></nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  จัดทำโดย <strong>Godlike Innovation</strong> | สงวนลิขสิทธิ์ 2026
+</footer>
+
+<div class="toast" id="toast">คัดลอก Prompt แล้ว!</div>
+
+<script type="module">
+  import { initNav, initSidebarSpy } from "../assets/js/nav.js";
+  import { initProgress } from "../assets/js/progress.js";
+  import { initCopy } from "../assets/js/copy.js";
+
+  function buildSidebarLinks() {
+    const sidebar = document.querySelector("#sidebar-links");
+    const headings = document.querySelectorAll("#main-content h2[id], #main-content h3[id]");
+    if (!sidebar || !headings.length) return;
+    sidebar.innerHTML = "";
+    headings.forEach((heading) => {
+      const link = document.createElement("a");
+      link.className = "sidebar-link";
+      if (heading.tagName === "H3") link.style.paddingLeft = "22px";
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      sidebar.appendChild(link);
+    });
+  }
+
+  buildSidebarLinks();
+  initNav("m14");
+  initSidebarSpy();
+  initProgress();
+  initCopy();
+</script>
+</body>
+</html>

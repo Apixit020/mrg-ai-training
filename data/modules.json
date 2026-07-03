@@ -1,0 +1,137 @@
+[
+  {
+    "id": "m01",
+    "slug": "m01-ai-agent",
+    "title": "รู้จัก AI Agent",
+    "subtitle": "DELEGATE Framework + บริบท MRG",
+    "icon": "🤖",
+    "level": "easy",
+    "file": "pages/m01-ai-agent.html"
+  },
+  {
+    "id": "m02",
+    "slug": "m02-claude-cowork",
+    "title": "เริ่มต้นใช้ Claude Cowork",
+    "subtitle": "การเริ่มใช้งานและ workflow พื้นฐาน",
+    "icon": "🚀",
+    "level": "easy",
+    "file": "pages/m02-getting-started.html"
+  },
+  {
+    "id": "m03",
+    "slug": "m03-documents",
+    "title": "สร้างเอกสาร Word / Excel / PPT / PDF",
+    "subtitle": "งานเอกสารและไฟล์สำนักงานด้วย AI",
+    "icon": "📄",
+    "level": "easy",
+    "file": "pages/m03-documents.html"
+  },
+  {
+    "id": "m04",
+    "slug": "m04-production-export-data",
+    "title": "วิเคราะห์ข้อมูลการผลิตและการส่งออก",
+    "subtitle": "สรุปตัวเลขและวิเคราะห์ข้อมูลเชิงปฏิบัติการ",
+    "icon": "📊",
+    "level": "medium",
+    "file": "pages/m04-data-analysis.html"
+  },
+  {
+    "id": "m05",
+    "slug": "m05-research-market-report",
+    "title": "Research + สรุปรายงานตลาดโลก",
+    "subtitle": "ค้นข้อมูลคู่แข่ง เทรนด์ และตลาดส่งออก",
+    "icon": "🌍",
+    "level": "easy",
+    "file": "pages/m05-research.html"
+  },
+  {
+    "id": "m06",
+    "slug": "m06-content-email-english",
+    "title": "เขียน Content / Email / เอกสารภาษาอังกฤษ",
+    "subtitle": "สื่อสารมืออาชีพทั้งไทยและอังกฤษ",
+    "icon": "✍️",
+    "level": "easy",
+    "file": "pages/m06-content-email.html"
+  },
+  {
+    "id": "m07",
+    "slug": "m07-google-drive-canva",
+    "title": "เชื่อมต่อ Google Drive / Canva",
+    "subtitle": "ทำงานร่วมกับไฟล์และงานออกแบบภายนอก",
+    "icon": "🔗",
+    "level": "medium",
+    "file": "pages/m07-google-drive-canva.html"
+  },
+  {
+    "id": "m08",
+    "slug": "m08-scheduled-tasks",
+    "title": "ตั้งเวลาทำงานอัตโนมัติ",
+    "subtitle": "Scheduled Tasks และงานประจำแบบอัตโนมัติ",
+    "icon": "⏰",
+    "level": "medium",
+    "file": "pages/m08-scheduled-tasks.html"
+  },
+  {
+    "id": "m09",
+    "slug": "m09-web-app-dashboard",
+    "title": "สร้าง Web App และ Dashboard",
+    "subtitle": "ต่อยอดข้อมูลเป็นเครื่องมือใช้งานจริง",
+    "icon": "🖥️",
+    "level": "medium",
+    "file": "pages/m09-web-app-dashboard.html"
+  },
+  {
+    "id": "m10",
+    "slug": "m10-connectors",
+    "title": "Connectors",
+    "subtitle": "Google Calendar, Plugins และ Telegram",
+    "icon": "🧩",
+    "level": "hard",
+    "file": "pages/m10-connectors.html"
+  },
+  {
+    "id": "m11",
+    "slug": "m11-mrg-skills",
+    "title": "Skills เฉพาะฝ่ายงาน MRG",
+    "subtitle": "สร้าง workflow เฉพาะทีมให้ใช้งานซ้ำได้",
+    "icon": "🛠️",
+    "level": "medium",
+    "file": "pages/m11-skills.html"
+  },
+  {
+    "id": "m12",
+    "slug": "m12-personal-plugins",
+    "title": "Personal Plugins สำหรับทีมงาน",
+    "subtitle": "ขยายความสามารถของ Cowork ให้เหมาะกับองค์กร",
+    "icon": "🔌",
+    "level": "medium",
+    "file": "pages/m12-plugins.html"
+  },
+  {
+    "id": "m13",
+    "slug": "m13-telegram-cowork",
+    "title": "สั่งงาน Cowork ผ่าน Telegram",
+    "subtitle": "เชื่อม bot และสั่งงานจากภายนอกระบบ",
+    "icon": "📱",
+    "level": "hard",
+    "file": "pages/m13-telegram.html"
+  },
+  {
+    "id": "m14",
+    "slug": "m14-claude-dispatch",
+    "title": "Claude Dispatch",
+    "subtitle": "ความสามารถใหม่สำหรับการสั่งงานและติดตามผล",
+    "icon": "🆕",
+    "level": "new",
+    "file": "pages/m14-dispatch.html"
+  },
+  {
+    "id": "m15",
+    "slug": "m15-projects",
+    "title": "Projects จัดการงานเป็นระบบ",
+    "subtitle": "จัดงานเป็นชุดและทำงานต่อเนื่องแบบมีโครงสร้าง",
+    "icon": "📁",
+    "level": "new",
+    "file": "pages/m15-projects.html"
+  }
+]

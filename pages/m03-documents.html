@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="th" data-modules-path="../data/modules.json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สร้างเอกสาร Word / Excel / PPT / PDF — MRG AI Training</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo-godlike.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <script>
+    if (!sessionStorage.getItem("mrg_auth")) {
+      location.href = "../login.html?redirect=" + encodeURIComponent(location.href);
+    }
+  </script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/img/logo-godlike.png" height="32" alt="Godlike" onerror="this.style.display='none'">
+    MRG AI Training
+  </a>
+  <div id="nav-links" class="nav-links"></div>
+  <a href="../data/mrg-claude-cowork-training.md" class="btn-outline" style="font-size:12px;padding:6px 14px;" download>📥 .md</a>
+</nav>
+
+<div id="progress-bar" class="progress-bar"></div>
+
+<div class="page-wrapper">
+  <div class="content-layout">
+    <main id="main-content">
+      <div style="margin-bottom: 32px;">
+        <span class="level-badge easy">Easy</span>
+        <p style="font-size:12px; color:var(--gi-muted); margin:8px 0 4px;">Module 03</p>
+        <h1>สร้างเอกสาร Word / Excel / PPT / PDF</h1>
+        <p style="color:var(--gi-muted); font-size:16px; margin-top:8px;">งานเอกสารและไฟล์สำนักงานด้วย AI</p>
+      </div>
+
+      <p><strong>หลักการ:</strong> สั่งประโยคเดียว ได้ไฟล์พร้อมใช้ — ไม่ต้องเปิดโปรแกรมเองเลย</p>
+
+      <h2 id="word-docx">3.1 สร้างเอกสาร Word (.docx) — บริบท MRG</h2>
+      <h3 id="sop-manual">SOP / คู่มือการทำงาน</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง SOP (Standard Operating Procedure) เรื่อง การรับวัตถุดิบกุ้งสด
+เป็นไฟล์ Word (.docx) จัดรูปแบบมาตรฐานองค์กร
+
+เนื้อหาประกอบด้วย:
+1. วัตถุประสงค์
+2. ขอบเขต
+3. คำจำกัดความ
+4. ขั้นตอนการปฏิบัติงาน (แบบ Step-by-step พร้อมเกณฑ์การตรวจรับ)
+5. เกณฑ์การตัดสินใจรับ/ปฏิเสธวัตถุดิบ
+6. บันทึกที่เกี่ยวข้อง
+7. ผู้รับผิดชอบ
+
+หัวกระดาษมีโลโก้ MRG เลขที่เอกสาร วันที่บังคับใช้ ผู้อนุมัติ</div>
+      </div>
+
+      <h3 id="internal-memo">บันทึกข้อความภายใน</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้างบันทึกข้อความ (Memo) ภาษาไทย เรื่อง ขออนุมัติจัดซื้ออุปกรณ์ห้อง Lab
+จาก: ฝ่าย QA
+ถึง: ผู้อำนวยการฝ่ายผลิต
+เนื้อหา: ขออนุมัติจัดซื้อชุดทดสอบ Salmonella Rapid Test 500 ชุด และ pH Meter 2 เครื่อง
+งบประมาณรวม 45,000 บาท เพื่อรองรับการตรวจสอบที่เพิ่มขึ้น
+สร้างเป็นไฟล์ Word มีหัวกระดาษ เลขที่เอกสาร วันที่ ช่องลงนาม</div>
+      </div>
+
+      <div class="tip-box">
+        <span class="tip-icon">💡</span><strong>Tip:</strong> บอก AI ว่าส่งใคร ส่งตลาดไหน ภาษาอะไร — AI จะปรับระดับความเป็นทางการให้ตรงเลย
+      </div>
+
+      <h2 id="excel-xlsx">3.2 สร้าง Excel (.xlsx) — บริบท MRG</h2>
+      <h3 id="monthly-export-report">รายงานยอดส่งออกรายเดือน</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้างไฟล์ Excel รายงานยอดส่งออกประจำเดือน
+มี 3 Sheet:
+1. ยอดส่งออก — วันที่ ตลาด สินค้า ปริมาณ (ตัน) มูลค่า (USD) สถานะ
+2. เปรียบเทียบเป้า — ยอดจริง vs ยอดเป้า แต่ละตลาด
+3. สรุปรายไตรมาส — ยอดรวม กำไร/ขาดทุน % เปลี่ยนแปลงจากปีที่แล้ว
+ใส่สูตรคำนวณอัตโนมัติ จัดรูปแบบสวยงาม</div>
+      </div>
+
+      <h3 id="qc-tracking-sheet">ติดตามคุณภาพการผลิต</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้างไฟล์ Excel QC Tracking Sheet สำหรับสายการผลิตกุ้งแช่แข็ง
+มีคอลัมน์: วันที่ผลิต, Lot No., สายการผลิต, จำนวน (kg),
+ผลตรวจ Microbiological, ผลตรวจ Chemical, ผลตรวจ Physical,
+Pass/Fail, หมายเหตุ, ผู้ตรวจ
+มี Conditional Formatting: แดง = Fail, เขียว = Pass</div>
+      </div>
+
+      <h2 id="powerpoint-pptx">3.3 สร้าง PowerPoint (.pptx) — บริบท MRG</h2>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง PowerPoint นำเสนอผลการดำเนินงาน Q1/2026 ให้คณะกรรมการบริษัท
+12 สไลด์ ประกอบด้วย:
+- หน้าปก MRG
+- สรุปภาพรวม Q1
+- ยอดส่งออกรายตลาด (กราฟ)
+- เปรียบเทียบ Q1 vs เป้าหมาย
+- ผลการผลิต (ปริมาณ vs คุณภาพ)
+- Highlight ตลาดใหม่ที่เติบโต
+- ปัญหาและการแก้ไข
+- แผน Q2
+- Be Better — นวัตกรรมประจำไตรมาส
+- หน้าปิด
+ใช้โทนสีน้ำเงิน-ขาว สไตล์ Professional เหมาะกับบอร์ดบริหาร</div>
+      </div>
+
+      <h2 id="export-english-docs">3.4 สร้างเอกสารภาษาอังกฤษสำหรับ Export</h2>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง Commercial Invoice Template เป็นไฟล์ Word ภาษาอังกฤษ
+สำหรับส่งออกผลิตภัณฑ์กุ้งแช่แข็ง
+
+รูปแบบมาตรฐาน:
+- Seller: Marine Gold Products Ltd. (ใส่ที่อยู่จริง)
+- Buyer: [ชื่อลูกค้า]
+- Invoice No. / Date
+- Description of Goods (ชื่อสินค้า, HS Code, Grade, Size)
+- Quantity (Cartons / Net Weight / Gross Weight)
+- Unit Price (USD/kg FOB) / Total Amount
+- Country of Origin: Thailand
+- Payment Terms / Incoterms
+- Signature Block
+
+จัดรูปแบบสวยงาม Professional ตามมาตรฐานการค้าระหว่างประเทศ</div>
+      </div>
+
+      <div class="tip-box">
+        <span class="tip-icon">💡</span><strong>Tip สำหรับ MRG:</strong> AI สามารถสร้างเอกสารได้ทั้ง ภาษาไทย ภาษาอังกฤษ หรือ 2 ภาษาในเอกสารเดียวกัน ระบุในคำสั่งได้เลย
+      </div>
+
+      <div class="module-nav" id="module-nav"></div>
+    </main>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">สารบัญ</div>
+      <nav id="sidebar-links"></nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  จัดทำโดย <strong>Godlike Innovation</strong> | สงวนลิขสิทธิ์ 2026
+</footer>
+
+<div class="toast" id="toast">คัดลอก Prompt แล้ว!</div>
+
+<script type="module">
+  import { initNav, initSidebarSpy } from "../assets/js/nav.js";
+  import { initProgress } from "../assets/js/progress.js";
+  import { initCopy } from "../assets/js/copy.js";
+
+  function buildSidebarLinks() {
+    const sidebar = document.querySelector("#sidebar-links");
+    const headings = document.querySelectorAll("#main-content h2[id], #main-content h3[id]");
+    if (!sidebar || !headings.length) return;
+    sidebar.innerHTML = "";
+    headings.forEach((heading) => {
+      const link = document.createElement("a");
+      link.className = "sidebar-link";
+      if (heading.tagName === "H3") link.style.paddingLeft = "22px";
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      sidebar.appendChild(link);
+    });
+  }
+
+  buildSidebarLinks();
+  initNav("m03");
+  initSidebarSpy();
+  initProgress();
+  initCopy();
+</script>
+</body>
+</html>

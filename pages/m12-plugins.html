@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th" data-modules-path="../data/modules.json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Plugins สำหรับทีมงาน — MRG AI Training</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo-godlike.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <script>
+    if (!sessionStorage.getItem("mrg_auth")) {
+      location.href = "../login.html?redirect=" + encodeURIComponent(location.href);
+    }
+  </script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/img/logo-godlike.png" height="32" alt="Godlike" onerror="this.style.display='none'">
+    MRG AI Training
+  </a>
+  <div id="nav-links" class="nav-links"></div>
+  <a href="../data/mrg-claude-cowork-training.md" class="btn-outline" style="font-size:12px;padding:6px 14px;" download>📥 .md</a>
+</nav>
+
+<div id="progress-bar" class="progress-bar"></div>
+
+<div class="page-wrapper">
+  <div class="content-layout">
+    <main id="main-content">
+      <div style="margin-bottom: 32px;">
+        <span class="level-badge medium">Medium</span>
+        <p style="font-size:12px; color:var(--gi-muted); margin:8px 0 4px;">Module 12</p>
+        <h1>Personal Plugins สำหรับทีมงาน</h1>
+        <p style="color:var(--gi-muted); font-size:16px; margin-top:8px;">ขยายความสามารถของ Cowork ให้เหมาะกับองค์กร</p>
+      </div>
+
+      <h2 id="what-is-plugin">12.1 Plugins คืออะไร</h2>
+      <p><strong>Plugins = กล่องเครื่องมือครบเซ็ต</strong> รวม Connectors + Skills + Tools ไว้ด้วยกัน</p>
+
+      <h2 id="plugin-steps">12.2 ขั้นตอนสร้าง Plugin</h2>
+      <h3 id="plugin-step-1">ขั้น 1: สั่ง AI สร้าง Plugin</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง Plugin ใหม่ชื่อ "mrg-export-agent"
+สำหรับทีม Export ของ Marine Gold Products
+
+รวม Skills:
+1. Skill "export-toolkit" — เอกสาร Export ครบชุด
+2. Skill "market-daily-brief" — สรุปราคากุ้งโลก
+3. Skill "customer-email-en" — อีเมลลูกค้าต่างประเทศ
+4. Skill "shipment-tracker" — ติดตามสถานะการจัดส่ง
+
+Connectors ที่ใช้: Google Drive, Gmail, Telegram Bot</div>
+      </div>
+
+      <h3 id="plugin-step-2">ขั้น 2: ทดสอบทุก Skill</h3>
+      <h3 id="plugin-step-3">ขั้น 3: Export แล้วแชร์ทีม</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">Export Plugin mrg-export-agent เป็นไฟล์ .plugin ให้ผมหน่อย
+เพื่อแชร์ให้ทีม Export ทุกคนติดตั้งใช้งาน</div>
+      </div>
+
+      <p><strong>วิธีทีมติดตั้ง Plugin:</strong></p>
+      <ul>
+        <li>ลากไฟล์ .plugin วางในช่อง Chat → พิมพ์ "ติดตั้ง Plugin นี้" → ใช้งานได้ทันที</li>
+      </ul>
+
+      <div class="module-nav" id="module-nav"></div>
+    </main>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">สารบัญ</div>
+      <nav id="sidebar-links"></nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  จัดทำโดย <strong>Godlike Innovation</strong> | สงวนลิขสิทธิ์ 2026
+</footer>
+
+<div class="toast" id="toast">คัดลอก Prompt แล้ว!</div>
+
+<script type="module">
+  import { initNav, initSidebarSpy } from "../assets/js/nav.js";
+  import { initProgress } from "../assets/js/progress.js";
+  import { initCopy } from "../assets/js/copy.js";
+
+  function buildSidebarLinks() {
+    const sidebar = document.querySelector("#sidebar-links");
+    const headings = document.querySelectorAll("#main-content h2[id], #main-content h3[id]");
+    if (!sidebar || !headings.length) return;
+    sidebar.innerHTML = "";
+    headings.forEach((heading) => {
+      const link = document.createElement("a");
+      link.className = "sidebar-link";
+      if (heading.tagName === "H3") link.style.paddingLeft = "22px";
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      sidebar.appendChild(link);
+    });
+  }
+
+  buildSidebarLinks();
+  initNav("m12");
+  initSidebarSpy();
+  initProgress();
+  initCopy();
+</script>
+</body>
+</html>

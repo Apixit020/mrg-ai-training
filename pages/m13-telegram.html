@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="th" data-modules-path="../data/modules.json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สั่งงาน Cowork ผ่าน Telegram — MRG AI Training</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo-godlike.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <script>
+    if (!sessionStorage.getItem("mrg_auth")) {
+      location.href = "../login.html?redirect=" + encodeURIComponent(location.href);
+    }
+  </script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/img/logo-godlike.png" height="32" alt="Godlike" onerror="this.style.display='none'">
+    MRG AI Training
+  </a>
+  <div id="nav-links" class="nav-links"></div>
+  <a href="../data/mrg-claude-cowork-training.md" class="btn-outline" style="font-size:12px;padding:6px 14px;" download>📥 .md</a>
+</nav>
+
+<div id="progress-bar" class="progress-bar"></div>
+
+<div class="page-wrapper">
+  <div class="content-layout">
+    <main id="main-content">
+      <div style="margin-bottom: 32px;">
+        <span class="level-badge hard">Hard</span>
+        <p style="font-size:12px; color:var(--gi-muted); margin:8px 0 4px;">Module 13</p>
+        <h1>สั่งงาน Cowork ผ่าน Telegram</h1>
+        <p style="color:var(--gi-muted); font-size:16px; margin-top:8px;">เชื่อม bot และสั่งงานจากภายนอกระบบ</p>
+      </div>
+
+      <h2 id="three-methods">ภาพรวม 3 วิธี</h2>
+      <table class="gi-table">
+        <thead>
+          <tr>
+            <th>วิธี</th>
+            <th>ความง่าย</th>
+            <th>ความเร็ว</th>
+            <th>เหมาะกับ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>วิธีที่ 1: Cowork โดยตรง</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>แจ้งทันที</td>
+            <td>งานทุกประเภท</td>
+          </tr>
+          <tr>
+            <td>วิธีที่ 2: Gmail</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>เช็ควันละครั้ง</td>
+            <td>งานไม่เร่ง</td>
+          </tr>
+          <tr>
+            <td>วิธีที่ 3: Telegram Webhook</td>
+            <td>⭐⭐⭐ (ตั้งค่าหน่อย)</td>
+            <td>ทุก 3 ชม.</td>
+            <td>แชทสั่งสะดวก อัตโนมัติ</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>โครงสร้างที่เหมือนกันทุกวิธี:</strong></p>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Flow</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">คุณ (สั่งงาน) → Cowork Agent (ทำงาน) → Telegram ของคุณ/ทีม (รับผลลัพธ์)</div>
+      </div>
+
+      <h2 id="direct-cowork">วิธีที่ 1 — Cowork โดยตรง (ง่ายที่สุด ⭐)</h2>
+      <p>ต้องการเพียง Telegram Bot (Module 10.5) แล้วเพิ่มประโยคต่อท้าย:</p>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">[คำสั่งงานปกติ]
+...ทำเสร็จแล้วส่งสรุปผลไปที่ Telegram Group MRG Export Team ด้วย</div>
+      </div>
+      <p><strong>ตัวอย่างสำหรับ MRG:</strong></p>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">วิเคราะห์ไฟล์ shrimp_price_data.xlsx ที่แนบมา
+สรุปราคากุ้งขาวตลาดสหรัฐ เปรียบเทียบ Q1 vs Q2
+ทำเสร็จแล้วส่งสรุปผลเป็นข้อความ Telegram ไปที่ MRG Export Team ด้วย</div>
+      </div>
+
+      <h2 id="gmail-method">วิธีที่ 2 — Gmail</h2>
+      <p><strong>ขั้นตอน:</strong></p>
+      <ol>
+        <li>สร้าง Skill ใน Cowork:</li>
+      </ol>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง skill เช็ค Gmail ทุกเช้า
+ถ้ามีอีเมลที่มีคำว่า "MRG-Task:" ให้ทำงานตามสั่ง
+แล้วส่งผลลัพธ์กลับทาง Telegram Group</div>
+      </div>
+      <ol start="2">
+        <li>ตั้ง Schedule:</li>
+      </ol>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">ตั้ง Schedule เช็ค Gmail ทุกเช้า 8 โมง
+ถ้ามีอีเมลที่มี "MRG-Task:" ให้ทำงานแล้วส่งผล Telegram</div>
+      </div>
+      <ol start="3">
+        <li>วิธีส่งอีเมลสั่งงาน (จากมือถือ):</li>
+      </ol>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Email</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">To: ตัวเอง@gmail.com
+Subject: MRG-Task: สรุปราคากุ้งโลกวันนี้และส่ง Telegram
+Body: ค้นหาราคากุ้งขาวในตลาดสหรัฐและ EU วันนี้</div>
+      </div>
+
+      <h2 id="telegram-webhook">วิธีที่ 3 — Telegram Webhook (อัตโนมัติสูงสุด 🔥)</h2>
+      <h3 id="webhook-architecture">Architecture</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Flow</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">พิมพ์ใน Telegram → Webhook → Apps Script → Google Sheet → Cowork ดึงงาน → ทำ → ส่ง Telegram</div>
+      </div>
+
+      <p><strong>ขั้นตอน:</strong></p>
+      <h3 id="webhook-step-1">1. สร้าง Google Sheet</h3>
+      <p>ชื่อ "MRG Cowork Tasks"</p>
+      <p>Header: <code>timestamp, userId, displayName, message, status</code></p>
+
+      <h3 id="webhook-step-2">2. เขียน Google Apps Script (Webhook + API)</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Code</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">var BOT_TOKEN = 'ใส่_Bot_Token_ที่ได้จาก_BotFather';
+var ALLOWED_USER_IDS = ['ใส่_userId_ที่อนุญาต']; // กรองเฉพาะทีม MRG
+
+// รับข้อความจาก Telegram
+function doPost(e) {
+  try {
+    var json = JSON.parse(e.postData.contents);
+    var message = json.message;
+    if (!message) return ok();
+
+    var userId = String(message.from.id);
+    var text = message.text || '';
+
+    // กรองเฉพาะผู้ใช้ที่อนุญาต
+    if (!ALLOWED_USER_IDS.includes(userId)) {
+      sendTelegram(userId, '❌ คุณไม่มีสิทธิ์ใช้งาน MRG Cowork Bot');
+      return ok();
+    }
+
+    // บันทึกลง Google Sheet
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    if (sheet.getRange('A1').getValue() === '') {
+      sheet.getRange('A1:E1').setValues([['timestamp','userId','displayName','message','status']]);
+    }
+    var timestamp = new Date().toLocaleString('th-TH', {timeZone: 'Asia/Bangkok'});
+    var displayName = (message.from.first_name || '') + ' ' + (message.from.last_name || '');
+    sheet.appendRow([timestamp, userId, displayName.trim(), text, 'pending']);
+
+    // ตอบกลับยืนยัน
+    sendTelegram(userId, '✅ รับงานแล้ว: ' + text + '\nClaude Cowork จะดำเนินการและส่งผลกลับมา');
+    return ok();
+  } catch (err) {
+    return ok();
+  }
+}
+
+// API สำหรับ Cowork ดึงงาน
+function doGet(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var data = sheet.getDataRange().getValues();
+  var pending = [];
+  for (var i = 1; i < data.length; i++) {
+    if (data[i][4] === 'pending') {
+      pending.push({
+        row: i + 1,
+        timestamp: String(data[i][0]),
+        userId: String(data[i][1]),
+        displayName: String(data[i][2]),
+        message: String(data[i][3])
+      });
+      sheet.getRange(i + 1, 5).setValue('done');
+    }
+  }
+  return ContentService.createTextOutput(
+    JSON.stringify({status:'ok', count: pending.length, tasks: pending})
+  ).setMimeType(ContentService.MimeType.JSON);
+}
+
+// ส่งข้อความ Telegram
+function sendTelegram(chatId, text) {
+  UrlFetchApp.fetch('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage', {
+    method: 'post',
+    contentType: 'application/json',
+    payload: JSON.stringify({chat_id: chatId, text: text, parse_mode: 'HTML'})
+  });
+}
+
+function ok() {
+  return ContentService.createTextOutput('ok');
+}</div>
+      </div>
+
+      <h3 id="webhook-step-3">3. Deploy เป็น Web App</h3>
+      <ul>
+        <li>Deploy → New Deployment → Type: เว็บแอป</li>
+        <li>ดำเนินการเป็น: <strong>ฉัน</strong> | ใครเข้าถึง: <strong>ทุกคน</strong> ← สำคัญ</li>
+        <li>Copy URL ที่ได้</li>
+      </ul>
+
+      <h3 id="webhook-step-4">4. ตั้ง Webhook URL ใน Telegram</h3>
+      <p>เปิดเบราว์เซอร์ → ไปที่ URL นี้ (แทน TOKEN และ WEBHOOK_URL):</p>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">🔗</span>
+          <span class="prompt-label">URL</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">https://api.telegram.org/bot{TOKEN}/setWebhook?url={WEBHOOK_URL}</div>
+      </div>
+      <p>ถ้าได้ <code>{"ok":true,"result":true}</code> = สำเร็จ</p>
+
+      <h3 id="webhook-step-5">5. ตั้ง Schedule ใน Cowork</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">ตั้ง Schedule เช็คคำสั่งจาก Telegram ทุก 3 ชั่วโมง
+ใช้ WebFetch เรียก Apps Script URL เพื่อดึง pending tasks
+ถ้ามีงาน ให้ทำตามคำสั่ง แล้วส่งผลกลับ Telegram</div>
+      </div>
+
+      <div class="module-nav" id="module-nav"></div>
+    </main>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">สารบัญ</div>
+      <nav id="sidebar-links"></nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  จัดทำโดย <strong>Godlike Innovation</strong> | สงวนลิขสิทธิ์ 2026
+</footer>
+
+<div class="toast" id="toast">คัดลอก Prompt แล้ว!</div>
+
+<script type="module">
+  import { initNav, initSidebarSpy } from "../assets/js/nav.js";
+  import { initProgress } from "../assets/js/progress.js";
+  import { initCopy } from "../assets/js/copy.js";
+
+  function buildSidebarLinks() {
+    const sidebar = document.querySelector("#sidebar-links");
+    const headings = document.querySelectorAll("#main-content h2[id], #main-content h3[id]");
+    if (!sidebar || !headings.length) return;
+    sidebar.innerHTML = "";
+    headings.forEach((heading) => {
+      const link = document.createElement("a");
+      link.className = "sidebar-link";
+      if (heading.tagName === "H3") link.style.paddingLeft = "22px";
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      sidebar.appendChild(link);
+    });
+  }
+
+  buildSidebarLinks();
+  initNav("m13");
+  initSidebarSpy();
+  initProgress();
+  initCopy();
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="th" data-modules-path="../data/modules.json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>วิเคราะห์ข้อมูลการผลิตและการส่งออก — MRG AI Training</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo-godlike.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <script>
+    if (!sessionStorage.getItem("mrg_auth")) {
+      location.href = "../login.html?redirect=" + encodeURIComponent(location.href);
+    }
+  </script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/img/logo-godlike.png" height="32" alt="Godlike" onerror="this.style.display='none'">
+    MRG AI Training
+  </a>
+  <div id="nav-links" class="nav-links"></div>
+  <a href="../data/mrg-claude-cowork-training.md" class="btn-outline" style="font-size:12px;padding:6px 14px;" download>📥 .md</a>
+</nav>
+
+<div id="progress-bar" class="progress-bar"></div>
+
+<div class="page-wrapper">
+  <div class="content-layout">
+    <main id="main-content">
+      <div style="margin-bottom: 32px;">
+        <span class="level-badge medium">Medium</span>
+        <p style="font-size:12px; color:var(--gi-muted); margin:8px 0 4px;">Module 04</p>
+        <h1>วิเคราะห์ข้อมูลการผลิตและการส่งออก</h1>
+        <p style="color:var(--gi-muted); font-size:16px; margin-top:8px;">สรุปตัวเลขและวิเคราะห์ข้อมูลเชิงปฏิบัติการ</p>
+      </div>
+
+      <h2 id="production-excel-analysis">4.1 วิเคราะห์ข้อมูล Excel การผลิต</h2>
+      <p><strong>วิธีใช้:</strong> ลากไฟล์ Excel ไปวางในช่อง Chat แล้วพิมพ์:</p>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">วิเคราะห์ข้อมูลการผลิตกุ้งแช่แข็งในไฟล์นี้ให้หน่อย
+
+อยากรู้:
+1. ไลน์การผลิตไหนมี Yield สูงสุดและต่ำสุด?
+2. ช่วงเวลาไหนที่ของเสีย (Waste %) สูงผิดปกติ?
+3. ปริมาณการผลิตเทียบกับเป้าหมายแต่ละเดือน เป็นอย่างไร?
+4. มีแนวโน้มอะไรที่น่าจับตา?
+
+สรุปเป็น Insight สั้นๆ ที่นำไปรายงานผู้จัดการฝ่ายผลิตได้เลย</div>
+      </div>
+
+      <h3 id="export-sales-analysis">วิเคราะห์ยอดส่งออก</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">วิเคราะห์ข้อมูลยอดส่งออกในไฟล์นี้
+
+อยากรู้:
+1. ตลาดไหนทำรายได้สูงสุด? และมีแนวโน้มอย่างไร?
+2. สินค้าไหน (Grade/Size) ที่ลูกค้าต่างประเทศต้องการมากที่สุด?
+3. ราคาเฉลี่ย FOB ต่อ kg เปลี่ยนแปลงอย่างไรในช่วง 6 เดือน?
+4. ตลาดไหนที่ยอดลดลงและควรเฝ้าระวัง?
+
+สรุปเป็นรายงานสั้นๆ พร้อมกราฟ</div>
+      </div>
+
+      <h2 id="interactive-dashboard">4.2 สร้าง Dashboard Interactive — ติดตามการผลิต</h2>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง Dashboard แบบ Interactive จากข้อมูลนี้
+เป็นไฟล์ HTML ที่เปิดในเบราว์เซอร์ได้เลย
+
+อยากได้:
+- กราฟเส้นแสดงปริมาณผลิตรายวัน/รายสัปดาห์
+- กราฟแท่ง Yield % แต่ละสายการผลิต
+- ตัวเลข KPI: ปริมาณผลิตรวม, Yield เฉลี่ย, % ของเสีย, Pass Rate QC
+- Dropdown เลือกดูทีละสายการผลิต
+- Indicator สีแดง/เหลือง/เขียว ตามเกณฑ์มาตรฐาน
+- โทนสีน้ำเงิน-ขาว (สีหลัก MRG)</div>
+      </div>
+
+      <h2 id="qc-analysis">4.3 วิเคราะห์ผลการตรวจ QC</h2>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">วิเคราะห์ข้อมูลผล QC ในไฟล์นี้
+
+อยากรู้:
+1. Pass Rate รวมของแต่ละเดือน เป็นเท่าไหร่?
+2. Lot ไหนที่ Fail บ่อยที่สุด? สาเหตุคืออะไร?
+3. มี pattern อะไรไหม เช่น วันไหน/กะไหน มีปัญหาบ่อย?
+4. สรุปข้อเสนอแนะ 3 ข้อ ที่ควรปรับปรุงในสายการผลิต
+
+นำเสนอเป็นรายงานพร้อมกราฟสำหรับประชุม QA Review</div>
+      </div>
+
+      <div class="module-nav" id="module-nav"></div>
+    </main>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">สารบัญ</div>
+      <nav id="sidebar-links"></nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  จัดทำโดย <strong>Godlike Innovation</strong> | สงวนลิขสิทธิ์ 2026
+</footer>
+
+<div class="toast" id="toast">คัดลอก Prompt แล้ว!</div>
+
+<script type="module">
+  import { initNav, initSidebarSpy } from "../assets/js/nav.js";
+  import { initProgress } from "../assets/js/progress.js";
+  import { initCopy } from "../assets/js/copy.js";
+
+  function buildSidebarLinks() {
+    const sidebar = document.querySelector("#sidebar-links");
+    const headings = document.querySelectorAll("#main-content h2[id], #main-content h3[id]");
+    if (!sidebar || !headings.length) return;
+    sidebar.innerHTML = "";
+    headings.forEach((heading) => {
+      const link = document.createElement("a");
+      link.className = "sidebar-link";
+      if (heading.tagName === "H3") link.style.paddingLeft = "22px";
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      sidebar.appendChild(link);
+    });
+  }
+
+  buildSidebarLinks();
+  initNav("m04");
+  initSidebarSpy();
+  initProgress();
+  initCopy();
+</script>
+</body>
+</html>

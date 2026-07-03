@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th" data-modules-path="../data/modules.json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ตั้งเวลาทำงานอัตโนมัติ — MRG AI Training</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo-godlike.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <script>
+    if (!sessionStorage.getItem("mrg_auth")) {
+      location.href = "../login.html?redirect=" + encodeURIComponent(location.href);
+    }
+  </script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/img/logo-godlike.png" height="32" alt="Godlike" onerror="this.style.display='none'">
+    MRG AI Training
+  </a>
+  <div id="nav-links" class="nav-links"></div>
+  <a href="../data/mrg-claude-cowork-training.md" class="btn-outline" style="font-size:12px;padding:6px 14px;" download>📥 .md</a>
+</nav>
+
+<div id="progress-bar" class="progress-bar"></div>
+
+<div class="page-wrapper">
+  <div class="content-layout">
+    <main id="main-content">
+      <div style="margin-bottom: 32px;">
+        <span class="level-badge medium">Medium</span>
+        <p style="font-size:12px; color:var(--gi-muted); margin:8px 0 4px;">Module 08</p>
+        <h1>ตั้งเวลาทำงานอัตโนมัติ</h1>
+        <p style="color:var(--gi-muted); font-size:16px; margin-top:8px;">Scheduled Tasks และงานประจำแบบอัตโนมัติ</p>
+      </div>
+
+      <h2 id="what-is-scheduled-task">8.1 Scheduled Tasks คืออะไร</h2>
+      <p>ตั้งเวลาให้ AI ทำงานซ้ำๆ อัตโนมัติ เหมาะกับงานรายงานประจำของ MRG</p>
+      <div class="warning-box">
+        <span class="tip-icon">⚠️</span><strong>สำคัญ:</strong> Claude Desktop ต้องเปิดค้างไว้เสมอ (ไม่ต้องเปิดหน้าจอ แค่เปิดแอป)
+      </div>
+
+      <h2 id="scheduled-task-examples">8.2 ตัวอย่าง Scheduled Tasks สำหรับ MRG</h2>
+      <h3 id="shrimp-price-morning">ติดตามราคากุ้งโลกทุกเช้า</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง Scheduled Task ชื่อ mrg-shrimp-price-morning
+ให้ทำงานทุกเช้าวันจันทร์ถึงศุกร์ เวลา 7.30 น.
+
+สิ่งที่ต้องทำ:
+1. ค้นหาราคากุ้งขาวในตลาดโลกล่าสุด (USD/kg, ตลาด USA/EU)
+2. ค้นหาข่าว Seafood Industry วันนี้ ที่เกี่ยวกับ Shrimp
+3. ดูอัตราแลกเปลี่ยน USD/THB วันนี้
+4. บันทึกเป็นไฟล์ Markdown ลงในโฟลเดอร์ daily-reports/
+5. ส่งสรุปผ่าน Telegram (ดู Module 13)</div>
+      </div>
+
+      <h3 id="daily-production-summary">รายงานการผลิตสิ้นวัน</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง Scheduled Task ชื่อ mrg-daily-production-summary
+ทำงานทุกวัน เวลา 18.00 น.
+
+สิ่งที่ต้องทำ:
+1. เปิดไฟล์ production_today.xlsx ในโฟลเดอร์ Production-Data
+2. วิเคราะห์ยอดผลิต ปริมาณ Yield QC Pass Rate ของวันนี้
+3. เปรียบเทียบกับเป้าหมายรายวัน
+4. สร้าง Daily Summary Report เป็น PDF
+5. บันทึกลงโฟลเดอร์ Reports/Daily/</div>
+      </div>
+
+      <h3 id="weekly-market-brief">สรุปข่าวตลาดส่งออกรายสัปดาห์</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง Scheduled Task ชื่อ mrg-weekly-market-brief
+ทำงานทุกวันศุกร์ เวลา 16.00 น.
+
+สิ่งที่ต้องทำ:
+1. ค้นหาข่าวตลาด Seafood และ Shrimp ประจำสัปดาห์
+2. ติดตามความเคลื่อนไหวของคู่แข่งหลัก
+3. สรุปกฎระเบียบหรือมาตรฐานใหม่ที่เกี่ยวข้อง
+4. สร้างรายงาน Weekly Market Brief เป็น Word
+5. บันทึกลงโฟลเดอร์ Reports/Weekly/</div>
+      </div>
+
+      <div class="module-nav" id="module-nav"></div>
+    </main>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">สารบัญ</div>
+      <nav id="sidebar-links"></nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  จัดทำโดย <strong>Godlike Innovation</strong> | สงวนลิขสิทธิ์ 2026
+</footer>
+
+<div class="toast" id="toast">คัดลอก Prompt แล้ว!</div>
+
+<script type="module">
+  import { initNav, initSidebarSpy } from "../assets/js/nav.js";
+  import { initProgress } from "../assets/js/progress.js";
+  import { initCopy } from "../assets/js/copy.js";
+
+  function buildSidebarLinks() {
+    const sidebar = document.querySelector("#sidebar-links");
+    const headings = document.querySelectorAll("#main-content h2[id], #main-content h3[id]");
+    if (!sidebar || !headings.length) return;
+    sidebar.innerHTML = "";
+    headings.forEach((heading) => {
+      const link = document.createElement("a");
+      link.className = "sidebar-link";
+      if (heading.tagName === "H3") link.style.paddingLeft = "22px";
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      sidebar.appendChild(link);
+    });
+  }
+
+  buildSidebarLinks();
+  initNav("m08");
+  initSidebarSpy();
+  initProgress();
+  initCopy();
+</script>
+</body>
+</html>

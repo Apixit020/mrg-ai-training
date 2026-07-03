@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="th" data-modules-path="../data/modules.json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เริ่มต้นใช้ Claude Cowork — MRG AI Training</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo-godlike.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <script>
+    if (!sessionStorage.getItem("mrg_auth")) {
+      location.href = "../login.html?redirect=" + encodeURIComponent(location.href);
+    }
+  </script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/img/logo-godlike.png" height="32" alt="Godlike" onerror="this.style.display='none'">
+    MRG AI Training
+  </a>
+  <div id="nav-links" class="nav-links"></div>
+  <a href="../data/mrg-claude-cowork-training.md" class="btn-outline" style="font-size:12px;padding:6px 14px;" download>📥 .md</a>
+</nav>
+
+<div id="progress-bar" class="progress-bar"></div>
+
+<div class="page-wrapper">
+  <div class="content-layout">
+    <main id="main-content">
+      <div style="margin-bottom: 32px;">
+        <span class="level-badge easy">Easy</span>
+        <p style="font-size:12px; color:var(--gi-muted); margin:8px 0 4px;">Module 02</p>
+        <h1>เริ่มต้นใช้ Claude Cowork</h1>
+        <p style="color:var(--gi-muted); font-size:16px; margin-top:8px;">การเริ่มใช้งานและ workflow พื้นฐาน</p>
+      </div>
+
+      <h2 id="signup-install">2.1 สมัครและติดตั้ง Claude Cowork</h2>
+      <p><strong>ข้อกำหนด:</strong> ต้องสมัครแผน <strong>Pro ขึ้นไป ($20/เดือน)</strong></p>
+      <p><strong>ขั้นตอนทั้งหมด:</strong></p>
+      <ol>
+        <li><strong>สมัคร Claude Account</strong> → <a href="https://claude.ai/" target="_blank" rel="noreferrer">claude.ai</a> → Sign Up</li>
+        <li><strong>อัปเกรดเป็น Pro</strong> → <a href="https://claude.ai/upgrade" target="_blank" rel="noreferrer">claude.ai/upgrade</a></li>
+        <li><strong>ติดตั้ง Claude Desktop</strong> (Windows/Mac) → <a href="https://claude.com/download" target="_blank" rel="noreferrer">claude.com/download</a> → ติดตั้ง → เปิดแอป → Login</li>
+        <li><strong>ตั้งค่า Privacy</strong> → ปิดการนำข้อมูลไปเทรนต่อ (สำคัญ! ข้อมูลบริษัทต้องเป็นความลับ)</li>
+        <li><strong>แนะนำตัวให้ AI รู้จักเรา</strong> → ใช้ Prompt ด้านล่าง</li>
+      </ol>
+
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">ฉันเป็นพนักงาน [ชื่อฝ่าย] ของบริษัท มารีนโกลด์โปรดักส์ จำกัด (MRG)
+ธุรกิจหลักคือการผลิตและส่งออกผลิตภัณฑ์กุ้งและอาหารทะเลแช่แข็งระดับโลก
+งานของฉันเกี่ยวกับ [อธิบายงานหลัก]
+ลูกค้าของเราอยู่ใน [ประเทศ/ภูมิภาค]
+ภาษาที่ใช้ในงาน: ภาษาไทย และ ภาษาอังกฤษ
+
+โปรดช่วยสรุปโปรไฟล์ของฉันเป็น System Prompt สั้นๆ ไม่เกิน 1,500 ตัวอักษร
+เพื่อให้คุณจำและทำงานร่วมกับฉันได้ดีขึ้น</div>
+      </div>
+
+      <div class="tip-box">
+        <span class="tip-icon">💡</span><strong>Tip:</strong> นำข้อความที่ได้ไปวางในส่วน <strong>Memory</strong> หรือ <strong>User Preferences</strong> ของ Claude → AI จะตอบได้ตรงบริบทงาน MRG ทุกครั้ง
+      </div>
+
+      <h2 id="cowork-interface">2.2 ทำความเข้าใจหน้าจอ Claude Cowork</h2>
+      <table class="gi-table">
+        <thead>
+          <tr>
+            <th>ส่วน</th>
+            <th>คำอธิบาย</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ช่อง Chat (กลาง)</td>
+            <td>ที่พิมพ์สั่งงาน AI</td>
+          </tr>
+          <tr>
+            <td>ปุ่ม Attach (📎)</td>
+            <td>ลากไฟล์มาวาง หรือกดเลือกไฟล์</td>
+          </tr>
+          <tr>
+            <td>เมนู Connectors</td>
+            <td>เชื่อมต่อ Google Drive, Canva</td>
+          </tr>
+          <tr>
+            <td>โฟลเดอร์งาน</td>
+            <td>AI จะเห็นไฟล์ในโฟลเดอร์ที่เลือก</td>
+          </tr>
+          <tr>
+            <td>Projects</td>
+            <td>Workspace แยกตามงาน/ฝ่าย (ฟีเจอร์ใหม่)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="first-prompt">2.3 Prompt แรก — ลองสั่งงาน AI</h2>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้างไฟล์ Excel รายการสินค้าส่งออกกุ้ง
+มีคอลัมน์: ลำดับ, รหัสสินค้า, ชื่อสินค้า (ไทย), Product Name (ENG),
+น้ำหนักสุทธิ (kg), น้ำหนักรวม (kg), ราคา FOB (USD), ตลาดส่งออก
+ใส่ตัวอย่างข้อมูล 10 รายการ สำหรับกุ้งขาวแช่แข็ง
+จัดรูปแบบให้สวยงาม มีสีหัวตาราง</div>
+      </div>
+
+      <p><strong>ขั้นตอน:</strong></p>
+      <ol>
+        <li>Copy Prompt → Paste ใน Claude Cowork → กด Enter</li>
+        <li>รอ AI ทำงาน (สร้างไฟล์ Excel ให้อัตโนมัติ)</li>
+        <li>กดลิงก์ดาวน์โหลดไฟล์ .xlsx ที่ AI ส่งมา</li>
+      </ol>
+
+      <div class="tip-box">
+        <span class="tip-icon">💡</span><strong>Tip:</strong> ถ้าผลลัพธ์ยังไม่ตรงใจ พิมพ์ต่อได้ทันที เช่น "เพิ่มคอลัมน์ Lot Number" หรือ "แปลงราคาเป็น THB ด้วย"
+      </div>
+
+      <div class="module-nav" id="module-nav"></div>
+    </main>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">สารบัญ</div>
+      <nav id="sidebar-links"></nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  จัดทำโดย <strong>Godlike Innovation</strong> | สงวนลิขสิทธิ์ 2026
+</footer>
+
+<div class="toast" id="toast">คัดลอก Prompt แล้ว!</div>
+
+<script type="module">
+  import { initNav, initSidebarSpy } from "../assets/js/nav.js";
+  import { initProgress } from "../assets/js/progress.js";
+  import { initCopy } from "../assets/js/copy.js";
+
+  function buildSidebarLinks() {
+    const sidebar = document.querySelector("#sidebar-links");
+    const headings = document.querySelectorAll("#main-content h2[id], #main-content h3[id]");
+    if (!sidebar || !headings.length) return;
+    sidebar.innerHTML = "";
+    headings.forEach((heading) => {
+      const link = document.createElement("a");
+      link.className = "sidebar-link";
+      if (heading.tagName === "H3") link.style.paddingLeft = "22px";
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      sidebar.appendChild(link);
+    });
+  }
+
+  buildSidebarLinks();
+  initNav("m02");
+  initSidebarSpy();
+  initProgress();
+  initCopy();
+</script>
+</body>
+</html>

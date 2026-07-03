@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="th" data-modules-path="../data/modules.json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects จัดการงานเป็นระบบ — MRG AI Training</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo-godlike.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <script>
+    if (!sessionStorage.getItem("mrg_auth")) {
+      location.href = "../login.html?redirect=" + encodeURIComponent(location.href);
+    }
+  </script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/img/logo-godlike.png" height="32" alt="Godlike" onerror="this.style.display='none'">
+    MRG AI Training
+  </a>
+  <div id="nav-links" class="nav-links"></div>
+  <a href="../data/mrg-claude-cowork-training.md" class="btn-outline" style="font-size:12px;padding:6px 14px;" download>📥 .md</a>
+</nav>
+
+<div id="progress-bar" class="progress-bar"></div>
+
+<div class="page-wrapper">
+  <div class="content-layout">
+    <main id="main-content">
+      <div style="margin-bottom: 32px;">
+        <span class="level-badge new">New</span>
+        <p style="font-size:12px; color:var(--gi-muted); margin:8px 0 4px;">Module 15</p>
+        <h1>Projects จัดการงานเป็นระบบ</h1>
+        <p style="color:var(--gi-muted); font-size:16px; margin-top:8px;">จัดงานเป็นชุดและทำงานต่อเนื่องแบบมีโครงสร้าง</p>
+      </div>
+
+      <p><strong>เปิดตัว:</strong> 20 มีนาคม 2026</p>
+
+      <h2 id="what-is-projects">15.1 Projects คืออะไร</h2>
+      <p>เปลี่ยน Claude Desktop จาก one-off chats → <strong>Structured Workspace</strong> สำหรับงานต่อเนื่อง</p>
+
+      <h2 id="new-features">15.2 ฟีเจอร์ใหม่ 6 อย่าง</h2>
+      <ol>
+        <li><strong>Workspace แยกตามงาน/ฝ่าย</strong> — รวมงานที่เกี่ยวข้องไว้ด้วยกัน</li>
+        <li><strong>Memory แบบ Project-scoped</strong> — จำบริบทข้าม task ในโปรเจกต์เดียวกัน</li>
+        <li><strong>Instructions เฉพาะ Project</strong> — กำหนด tone, format, ภาษา, กฎเฉพาะ</li>
+        <li><strong>Scheduled Tasks ผูกกับ Project</strong> — ทำงานซ้ำๆ ใน scope ของ project</li>
+        <li><strong>Import จาก Claude Chat Projects</strong> — ดึง files + instructions มาได้</li>
+        <li><strong>แยก Context Folder กับ Output Folder</strong> — เหมาะสำหรับทีม</li>
+      </ol>
+
+      <h2 id="create-project">15.3 วิธีสร้าง Project</h2>
+      <ol>
+        <li>กดปุ่ม <strong>+</strong> ที่หัวข้อ Projects ในแถบด้านซ้าย</li>
+        <li>ตั้งชื่อ + เลือก Context Folder + Output Folder</li>
+        <li>เขียน <strong>Instructions เฉพาะ Project</strong> (ภาษา, format, ข้อจำกัด)</li>
+        <li>คลิก <strong>"Work in a project"</strong> → เลือก Project → สั่งงานได้เลย</li>
+      </ol>
+
+      <h2 id="project-examples">15.4 ตัวอย่าง Projects สำหรับ MRG</h2>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Examples</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">📂 Project: USA Export
+   📁 Context: ข้อมูลลูกค้า USA, Spec สินค้า, Price List
+   📁 Output: เอกสาร Invoice, Email, Reports
+   📋 Instructions: ภาษาอังกฤษ Professional, Incoterms FOB, Currency USD
+   🧠 Memory: จำชื่อ Buyer, Port of Discharge, Product Preferences
+
+📂 Project: QA & Production
+   📁 Context: มาตรฐาน QC, SOP เดิม, เกณฑ์การตรวจ
+   📁 Output: Reports, NC Forms, SOP ฉบับใหม่
+   📋 Instructions: ภาษาไทย เป็นทางการ ใช้ศัพท์มาตรฐาน GMP/HACCP
+   🧠 Memory: จำเกณฑ์ Spec สินค้าแต่ละประเภท
+
+📂 Project: Market Intelligence
+   📋 Instructions: สรุปกระชับ ใช้ข้อมูลล่าสุดจาก Web Search
+   📁 Output: Weekly/Monthly Reports
+   ⏰ Scheduled: ทุกวันจันทร์ 08.00 น. สรุปข่าวตลาดสัปดาห์
+   🧠 Memory: จำข่าวที่เคยสรุปแล้ว ไม่สรุปซ้ำ
+
+📂 Project: Be Better Awards
+   📋 Instructions: โทนอบอุ่น เป็นกันเอง ยกย่องผลงาน
+   📁 Output: ประกาศรางวัล Certificates
+   🧠 Memory: จำรายชื่อผู้ชนะเดือนที่ผ่านมา</div>
+      </div>
+
+      <h2 id="project-prompts">15.5 Prompt ตัวอย่างในแต่ละ Project</h2>
+      <h3 id="usa-export-prompt">ใน Project: USA Export</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง Commercial Invoice สำหรับ Sunshine Foods Inc.
+Order: 1 FCL White Shrimp HLSO 26/30 IQF, น้ำหนัก 18,000 kg
+ราคา 4.85 USD/kg FOB Laem Chabang
+Shipment: 20 July 2026
+ใช้ข้อมูลลูกค้าและ Template ที่มีอยู่ใน Context ของ Project นี้</div>
+      </div>
+
+      <h3 id="qa-project-prompt">ใน Project: QA &amp; Production</h3>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง Non-Conformance Report สำหรับ Lot No. MRG-2026-0715
+ปัญหาที่พบ: Black Spot 3 จุดใน 1 กล่องตัวอย่าง
+ใช้ Format NC Report มาตรฐานของ MRG</div>
+      </div>
+
+      <h2 id="project-limitations">15.6 ⚠️ ข้อจำกัดที่ควรรู้</h2>
+      <ul>
+        <li>เก็บข้อมูลใน Local เท่านั้น (ยังไม่มี Cloud Sync)</li>
+        <li>ยังไม่รองรับ Project Sharing สำหรับ Team/Enterprise</li>
+        <li>Desktop ต้องเปิดค้างไว้สำหรับ Scheduled Tasks</li>
+      </ul>
+
+      <div class="module-nav" id="module-nav"></div>
+    </main>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">สารบัญ</div>
+      <nav id="sidebar-links"></nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  จัดทำโดย <strong>Godlike Innovation</strong> | สงวนลิขสิทธิ์ 2026
+</footer>
+
+<div class="toast" id="toast">คัดลอก Prompt แล้ว!</div>
+
+<script type="module">
+  import { initNav, initSidebarSpy } from "../assets/js/nav.js";
+  import { initProgress } from "../assets/js/progress.js";
+  import { initCopy } from "../assets/js/copy.js";
+
+  function buildSidebarLinks() {
+    const sidebar = document.querySelector("#sidebar-links");
+    const headings = document.querySelectorAll("#main-content h2[id], #main-content h3[id]");
+    if (!sidebar || !headings.length) return;
+    sidebar.innerHTML = "";
+    headings.forEach((heading) => {
+      const link = document.createElement("a");
+      link.className = "sidebar-link";
+      if (heading.tagName === "H3") link.style.paddingLeft = "22px";
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      sidebar.appendChild(link);
+    });
+  }
+
+  buildSidebarLinks();
+  initNav("m15");
+  initSidebarSpy();
+  initProgress();
+  initCopy();
+</script>
+</body>
+</html>

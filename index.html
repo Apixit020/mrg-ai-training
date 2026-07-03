@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claude Cowork Agent | Marine Gold Products</title>
+    <link rel="icon" type="image/png" href="assets/img/logo-godlike.png" />
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <script type="module">
+      import { checkAuth } from "./assets/js/auth.js";
+      checkAuth();
+    </script>
+    <script type="module" src="assets/js/auth.js"></script>
+    <script type="module" src="assets/js/nav.js"></script>
+    <script type="module" src="assets/js/progress.js"></script>
+    <script type="module" src="assets/js/copy.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="nav-logo" href="index.html">
+        <img src="assets/img/logo-godlike.png" alt="Godlike Innovation" onerror="this.style.display='none'" />
+        Claude Cowork
+      </a>
+      <div id="nav-links" class="nav-links"></div>
+      <a class="btn-outline nav-cta" href="data/mrg-claude-cowork-training.md">📥 .md</a>
+    </nav>
+
+    <div id="progress-bar" class="progress-bar"></div>
+
+    <div class="page-wrapper">
+      <section class="hero-section">
+        <h1 class="hero-title">Claude Cowork Agent</h1>
+        <p class="hero-sub">คู่มืออบรมฉบับ Marine Gold Products — Be Better ด้วย AI</p>
+        <div class="hero-badges">
+          <span class="level-badge easy">15 Modules</span>
+          <span class="level-badge medium">Telegram Integration</span>
+          <span class="level-badge new">อัปเดต 2026</span>
+        </div>
+        <a class="btn-primary" href="pages/m01-ai-agent.html">เริ่มเรียน Module 1 →</a>
+      </section>
+
+      <section style="padding: 16px 24px 0; max-width: 1200px; margin: 0 auto">
+        <h2>เลือก Module</h2>
+        <div class="module-grid" id="module-grid"></div>
+      </section>
+    </div>
+
+    <footer class="footer">จัดทำโดย Godlike Innovation | 2026</footer>
+
+    <script type="module">
+      import { initNav } from "./assets/js/nav.js";
+      import { initProgress } from "./assets/js/progress.js";
+      import { initCopy } from "./assets/js/copy.js";
+
+      initNav();
+      initProgress();
+      initCopy();
+    </script>
+  </body>
+</html>

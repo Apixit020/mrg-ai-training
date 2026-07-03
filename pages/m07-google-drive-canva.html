@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="th" data-modules-path="../data/modules.json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เชื่อมต่อ Google Drive / Canva — MRG AI Training</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo-godlike.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <script>
+    if (!sessionStorage.getItem("mrg_auth")) {
+      location.href = "../login.html?redirect=" + encodeURIComponent(location.href);
+    }
+  </script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/img/logo-godlike.png" height="32" alt="Godlike" onerror="this.style.display='none'">
+    MRG AI Training
+  </a>
+  <div id="nav-links" class="nav-links"></div>
+  <a href="../data/mrg-claude-cowork-training.md" class="btn-outline" style="font-size:12px;padding:6px 14px;" download>📥 .md</a>
+</nav>
+
+<div id="progress-bar" class="progress-bar"></div>
+
+<div class="page-wrapper">
+  <div class="content-layout">
+    <main id="main-content">
+      <div style="margin-bottom: 32px;">
+        <span class="level-badge medium">Medium</span>
+        <p style="font-size:12px; color:var(--gi-muted); margin:8px 0 4px;">Module 07</p>
+        <h1>เชื่อมต่อ Google Drive / Canva</h1>
+        <p style="color:var(--gi-muted); font-size:16px; margin-top:8px;">ทำงานร่วมกับไฟล์และงานออกแบบภายนอก</p>
+      </div>
+
+      <h2 id="connect-google-drive">7.1 เชื่อมต่อ Google Drive</h2>
+      <p><strong>ขั้นตอน:</strong></p>
+      <ol>
+        <li>กดไอคอนปลั๊กอิน (🧩) ที่แถบด้านข้าง</li>
+        <li>เลือก <strong>Google Drive</strong> → กด Connect</li>
+        <li>Login ด้วย Google Account ของ MRG → กด <strong>Allow</strong></li>
+        <li>สถานะเปลี่ยนเป็น <strong>"Connected" สีเขียว</strong></li>
+      </ol>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">เปิดไฟล์ Export_Report_June2026.xlsx จาก Google Drive
+วิเคราะห์ยอดส่งออกของเดือนมิถุนายน
+สินค้าไหนขายดีสุด ตลาดไหนเกินเป้า และตลาดไหนต้องระวัง
+สรุปเป็นตารางเปรียบเทียบ</div>
+      </div>
+
+      <h2 id="connect-canva">7.2 เชื่อมต่อ Canva</h2>
+      <p><strong>ขั้นตอน:</strong></p>
+      <ol>
+        <li>กดเมนู Connectors → เลือก <strong>Canva</strong> → Connect</li>
+        <li>Login ด้วย Canva Account → Allow</li>
+        <li>สถานะ "Connected"</li>
+      </ol>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">สร้าง Product Catalog Slide บน Canva สำหรับส่งลูกค้าต่างประเทศ
+สินค้า: Premium IQF White Shrimp รูปแบบต่างๆ
+สี: น้ำเงิน-ขาว โทน Premium Seafood
+ใส่: รูปสินค้า, Size, Pack Description, Certifications (ASC/BAP)
+รูปแบบ: A4 Landscape สำหรับ PDF</div>
+      </div>
+
+      <h2 id="cross-platform-workflow">7.3 ทำงานข้ามแพลตฟอร์ม</h2>
+      <div class="prompt-box">
+        <div class="prompt-header">
+          <span class="prompt-icon">✦</span>
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-btn" type="button">Copy</button>
+        </div>
+        <div class="prompt-content">ช่วยทำงานนี้ให้หน่อย:
+1. เปิดไฟล์ QC_Report_Q2.xlsx จาก Google Drive
+2. วิเคราะห์ผลการตรวจคุณภาพ ว่าสายการผลิตไหนมีปัญหา
+3. สร้าง Presentation บน Canva สรุปผล 5 สไลด์
+4. สร้างไฟล์ Word รายงาน QC Summary สำหรับผู้บริหาร
+
+ทำทั้งหมดเลยครับ</div>
+      </div>
+
+      <div class="module-nav" id="module-nav"></div>
+    </main>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">สารบัญ</div>
+      <nav id="sidebar-links"></nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  จัดทำโดย <strong>Godlike Innovation</strong> | สงวนลิขสิทธิ์ 2026
+</footer>
+
+<div class="toast" id="toast">คัดลอก Prompt แล้ว!</div>
+
+<script type="module">
+  import { initNav, initSidebarSpy } from "../assets/js/nav.js";
+  import { initProgress } from "../assets/js/progress.js";
+  import { initCopy } from "../assets/js/copy.js";
+
+  function buildSidebarLinks() {
+    const sidebar = document.querySelector("#sidebar-links");
+    const headings = document.querySelectorAll("#main-content h2[id], #main-content h3[id]");
+    if (!sidebar || !headings.length) return;
+    sidebar.innerHTML = "";
+    headings.forEach((heading) => {
+      const link = document.createElement("a");
+      link.className = "sidebar-link";
+      if (heading.tagName === "H3") link.style.paddingLeft = "22px";
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      sidebar.appendChild(link);
+    });
+  }
+
+  buildSidebarLinks();
+  initNav("m07");
+  initSidebarSpy();
+  initProgress();
+  initCopy();
+</script>
+</body>
+</html>

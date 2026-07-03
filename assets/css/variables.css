@@ -1,0 +1,57 @@
+/* Godlike Innovator - Design Tokens */
+:root {
+  /* Brand Colors */
+  --gi-navy: #1a237e;
+  --gi-royal: #283593;
+  --gi-blue: #1565c0;
+  --gi-sky: #0288d1;
+  --gi-cyan: #00aeef;
+
+  /* Surfaces */
+  --gi-dark: #f3f8ff;
+  --gi-surface: #ffffff;
+  --gi-card: #f8fbff;
+  --gi-border: #d7e6f6;
+
+  /* Text */
+  --gi-text: #17304d;
+  --gi-muted: #5b7291;
+  --gi-subtle: #8ea4bf;
+
+  /* Gradients */
+  --gi-gradient: linear-gradient(135deg, #eef7ff 0%, #dff2ff 38%, #c6edff 100%);
+  --gi-gradient-h: linear-gradient(90deg, #1565c0 0%, #00aeef 100%);
+  --gi-brand-gradient: linear-gradient(135deg, #1a237e 0%, #1565c0 50%, #00aeef 100%);
+  --gi-shadow: 0 20px 45px rgba(21, 101, 192, 0.12);
+
+  /* Semantic */
+  --color-easy: #10b981;
+  --color-medium: #3b82f6;
+  --color-hard: #f59e0b;
+  --color-new: #8b5cf6;
+
+  /* Typography */
+  --font-thai: "Sarabun", sans-serif;
+  --font-en: "Inter", sans-serif;
+  --font-code: "JetBrains Mono", monospace;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Transition */
+  --transition: 0.2s ease;
+
+  /* Layout */
+  --navbar-h: 60px;
+  --sidebar-w: 260px;
+  --content-max: 820px;
+}
